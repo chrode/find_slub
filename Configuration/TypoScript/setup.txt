@@ -1,0 +1,30 @@
+plugin.tx_find {
+    settings {
+        facets {
+
+            10 {
+                id = topic
+                autocomplete = 1
+                field = topic_facet
+            }
+
+            15 {
+                id = institution
+                autocomplete = 1
+                field = institution
+            }
+            20 {
+                id = year
+                field = publishDateSort
+            }
+            30 {
+                id = format
+                field = format
+            }
+        }
+
+        additionalFilters {
+            1 = institution:DE-14
+        }
+    }
+}
