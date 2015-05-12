@@ -1,27 +1,383 @@
+plugin.tx_find.view {
+    templateRootPath = EXT:find_slub/Resources/Private/Templates/
+    partialRootPath = EXT:find_slub/Resources/Private/Partials/
+    layoutRootPath = EXT:find_slub/Resources/Private/Layouts/
+}
 
 plugin.tx_find.settings.facets {
 
     10 {
-        id = topic
-        autocomplete = 1
-        field = topic_facet
+        id = format_de15
+        field = format_de15
     }
 
-    15 {
-        id = institution
-        autocomplete = 1
-        field = institution
-    }
     20 {
-        id = year
+        id = language
+        autocomplete = 1
+        field = language
+    }
+
+    30 {
+        id = finc_class_facet
+        field = finc_class_facet
+    }
+
+    50 {
+        id = publishDateSort
         field = publishDateSort
     }
-    30 {
-        id = format
-        field = format
+
+
+}
+
+plugin.tx_find.settings.components {
+
+    DismaxHandler = edismax
+
+    DismaxParams {
+        10 {
+            name = mm
+            value = 3
+        }
+
+        20 {
+            name = bf
+            value = ord(publishDateSort)^10
+        }
+    }
+
+    DismaxFields {
+        10 = title_short^750
+        20 = title_full_unstemmed^600
+        30 = title_full^400
+        40 = title^500
+        50 = title_alt^200
+        60 = title_new^100
+        70 = title_orig^500
+        80 = series^50
+        90 = series2^30
+        100 = series_orig^50
+        110 = author^300
+        120 = author_id^100
+        130 = author_corp^300
+        140 = author2^300
+        150 = author_corp2^100
+        160 = author_fuller^150
+        170 = author_ref^500
+        180 = author_corp_ref^500
+        190 = author_orig^300
+        200 = author2_orig^300
+        210 = author_corp_orig^300
+        220 = author_corp2_orig^100
+        230 = topic_ref^500
+        240 = contents^10
+        250 = topic_unstemmed^550
+        260 = topic^500
+        270 = geographic^300
+        280 = genre^300
+        290 = rvk_label
+        300 = allfields_unstemmed^10
+        310 = allfields
+        320 = fulltext
+        330 = isbn
+        340 = issn
+        350 = ismn
+        360 = rsn
+    }
+
+    QueryFields {
+        10 {
+            field = 10
+            operators {
+              or = 500
+            }
+            10 {
+
+                10 {
+                    field = title_short
+                    operators {
+                        onephrase = 750
+                    }
+                }
+                20 {
+                    field = title_full_unstemmed
+                    operators {
+                        onephrase = 600
+                        and = 500
+                    }
+                }
+                30 {
+                    field = title_full
+                    operators {
+                        onephrase = 400
+                    }
+                }
+                40 {
+                    field = title
+                    operators {
+                        onephrase = 400
+                        and = 250
+                    }
+                }
+                #50 {
+                #    field = title_alt
+                #    operators {
+                #        and = 200
+                #    }
+                #}
+                #60 {
+                #    field = title_new
+                #    operators {
+                #        and = 200
+                #    }
+                #}
+                #70 {
+                #    field = title_orig
+                #   operators {
+                #       onephrase = 500
+                #       and = 400
+                #   }
+                #}
+
+            }
+        }
+
+        20 {
+            field = series
+            operators {
+                onephrase = 300
+                and = 100
+            }
+        }
+
+        30 {
+            field = series2
+            operators {
+                and = 30
+            }
+        }
+
+        40 {
+            field = series_orig
+            operators {
+                onephrase = 200
+                and = 100
+            }
+        }
+
+        50 {
+            field = author
+            operators {
+                onephrase = 500
+                and = 250
+            }
+        }
+
+        60 {
+            field = author_id
+            operators {
+                onephrase = 50
+                and = 25
+            }
+        }
+
+        70 {
+            field = author_ref
+            operators {
+                onephrase = 500
+                and = 250
+                or = 250
+            }
+        }
+
+        80 {
+            field = author_corp_ref
+            operators {
+                onephrase = 500
+                and = 250
+                or = 250
+            }
+        }
+
+        90 {
+            field = author_orig
+            operators {
+                onephrase = 500
+                and = 250
+            }
+        }
+
+        100 {
+            field = author2_orig
+            operators {
+                and = 50
+            }
+        }
+
+        110 {
+            field = author_corp_orig
+            operators {
+                onephrase = 500
+                and = 400
+            }
+        }
+
+        120 {
+            field = author_corp2_orig
+            operators {
+                and = 50
+            }
+        }
+
+        130 {
+            field = author_corp
+            operators {
+                onephrase = 500
+                and = 400
+            }
+        }
+
+        140 {
+            field = author2
+            operators {
+                and = 50
+            }
+        }
+
+        150 {
+            field = author_corp2
+            operators {
+                and = 50
+            }
+        }
+
+        160 {
+            field = contents
+            operators {
+                and = 10
+            }
+        }
+
+        170 {
+            field = topic_unstemmed
+            operators {
+                onephrase = 550
+                and = 500
+            }
+        }
+
+        180 {
+            field = topic
+            operators {
+                onephrase = 500
+            }
+        }
+
+        190 {
+            field = topic_ref
+            operators {
+                onephrase = 500
+                and = 250
+                or = 250
+            }
+        }
+
+        200 {
+            field = topic_id
+            operators {
+                onephrase = 50
+                and = 25
+            }
+        }
+
+        210 {
+            field = allfields_unstemmed
+            operators {
+                or = 10
+            }
+        }
+
+        220 {
+            field = allfields
+            operators {
+                or = ~
+            }
+        }
+
+        230 {
+            field = fulltext
+            operators {
+                or = ~
+            }
+        }
+
+        240 {
+            field = isbn
+            operators {
+                onephrase = 500
+            }
+        }
+
+        250 {
+            field = issn
+            operators {
+                onephrase = 500
+            }
+        }
+
+        260 {
+            field = ismn
+            operators {
+                onephrase = 500
+            }
+        }
+
     }
 
 }
+
+
+
+plugin.tx_find.settings.queryFields >
+
+plugin.tx_find.settings.queryFields {
+    10 {
+        id = default
+        query = %s
+        type = Text
+    }
+}
+
+
 plugin.tx_find.settings.additionalFilters {
     1 = institution:DE-14
+}
+
+plugin.tx_find.settings {
+
+    enrich {
+
+        detail {
+
+            10 {
+
+                check_field = fullrecord
+                check_pattern = /^blob:(.*?)$/
+                ws = https://ai.ub.uni-leipzig.de/blob/?%s
+
+            }
+
+
+            20 {
+
+                check_field = rsn
+                check_pattern = /^.*DE-14.?(.*?)$/
+                ws = http://primoproxy.slub-dresden.de/cgi-bin/jsonDetails.pl?result.id=libero_mab2%s
+
+            }
+
+        }
+
+    }
+
 }
