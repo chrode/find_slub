@@ -1,0 +1,61 @@
+{namespace s=Subugoe\Find\ViewHelpers}
+{namespace t3jquery=Tx_T3jquery_ViewHelpers}
+<f:comment>
+	Uses facet data to draw a histogram of the distribution of the (numeric) facet terms.
+	Includes the required JavaScript libraries (jQuery.flot) and hooks up the script
+	functions to enable interaction.
+	Adds a link to deselect the date range used for faceting if there is a selection.
+</f:comment>
+<t3jquery:addJQueryAndScript jsfile="EXT:find/Resources/Public/JavaScript/flot/jquery.flot.js"/>
+<t3jquery:addJQueryAndScript jsfile="EXT:find/Resources/Public/JavaScript/flot/jquery.flot.selection.js"/>
+<div class="facetHistogram-container">
+	<f:if condition="{s:find.facetIsActive(facetID:facetInfo.id, activeFacets:config.activeFacets)}">
+		<f:for each="{s:data.valueForKey(array:config.activeFacets, key:facetInfo.id)}" as="termInfo" key="term">
+			<f:alias map="{years:\"{s:format.regexp(match:'/RANGE ([0-9]*) TO ([0-9]*)/', replace:'\1-\2', string:term)}\"}">
+				<span class="facetActive">
+					<f:link.action
+						addQueryString="TRUE"
+						argumentsToBeExcludedFromQueryString="{s:find.facetLinkArguments(facetID:facetInfo.id, activeFacets:config.activeFacets, mode:'remove')}"
+						section="{settings.jumpToID}"
+						noCacheHash="1"
+						class="icon-cancel facetRemove internal"
+						title="{f:translate(key:'remove filter %s', arguments:{0:years})}"><span class="facetName">{years}</span></f:link.action>
+				</span>
+			</f:alias>
+		</f:for>
+	</f:if>
+	<f:alias map="{
+		addArguments:'{s:find.facetLinkArguments(facetID:facetInfo.id, facetTerm:\"%%%%\", mode:\"add\", activeFacets:config.activeFacets)}',
+		removeArguments:'{f:if(
+			condition:\"{s:data.valueForKey(array:config.arguments.facet, key:facetInfo.id)}\",
+			then:\"{s:find.facetLinkArguments(facetID:facetInfo.id, mode:\'remove\', activeFacets:config.activeFacets)}\",
+			else:\"{0:\'{config.prefixID}[page]\'}\"
+		)}'
+	}">
+		<f:link.action
+			addQueryString="TRUE"
+			arguments="{addArguments}"
+			argumentsToBeExcludedFromQueryString="{removeArguments}"
+			section="{settings.jumpToID}"
+			noCacheHash="1"
+			class="link-template hidden internal"
+		/>
+		<div class="histogram" id="c-{config.uid}-histogram-{facetInfo.id}">
+			<script type="text/javascript">
+			(function () {
+				var histogramConfiguration = {
+					'facetID': <s:format.json data="{facetInfo.id}"/>,
+					'barWidth': {f:if(condition:facetInfo.barWidth, then:facetInfo.barWidth else:1)},
+					'activeFacets': [],
+				}
+				<f:for each="{s:data.valueForKey(array:config.activeFacets, key:facetInfo.id)}" as="termInfo" key="term">
+					histogramConfiguration.activeFacets.push({s:format.json(data:term)});
+				</f:for>
+				var facetData = <s:format.json data="{facetData.values}"/>;
+
+				tx_find.createHistogramForTermsInContainer(facetData, document.getElementById('c-{config.uid}-histogram-{facetInfo.id}'), histogramConfiguration);
+			})();
+			</script>
+		</div>
+	</f:alias>
+</div>

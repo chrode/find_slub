@@ -1,0 +1,19 @@
+<f:comment>
+	Renders the detail link to the document’s page.
+
+	This includes a localised string as well as hooking up with the JavaScript
+	required for detailPagePaging if necessary.
+</f:comment>
+<f:link.action
+	action="detail"
+	arguments="{id:document.id}"
+	section="{settings.jumpToID}"
+	noCacheHash="1"
+	onclick="{f:if(
+		condition:'{settings.paging.detailPagePaging == 1}',
+		then:'return tx_find.detailViewWithPaging(this);'
+	)}"
+	class="details icon-right-open internal no-change"
+>
+	<f:translate key="Show Detail Page"/>
+</f:link.action>

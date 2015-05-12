@@ -1,0 +1,32 @@
+{namespace s=Subugoe\Find\ViewHelpers}
+<f:comment>
+	Variation of the list facet designed to be used as »Tabs« outside the normal
+	facet section (e.g. allow a general selection of different data types).
+	
+	It has to be included in an appropriate position of the page, probably between
+	the search form and the result list and will only allow the selection of
+	a single facet item. Please refer to the Readme for notes on the appropriate
+	facet configuration for this use case.
+</f:comment>
+<ol class="facetTabs">
+	<f:for each="{facetData.values}" as="itemCount" key="facetTerm" iteration="iterator">
+		<li class="{f:if(
+			condition:'{s:find.facetIsActive(facetID:facetInfo.id, facetTerm:facetTerm, activeFacets:config.activeFacets)}',
+			then:'facetActive'
+		)}">
+			<f:link.action
+				addQueryString="TRUE"
+				argumentsToBeExcludedFromQueryString="{s:find.facetLinkArguments(facetID:facetInfo.id, activeFacets:config.activeFacets, mode:'remove')}"
+				arguments="{s:find.facetLinkArguments(facetID:facetInfo.id, facetTerm:facetTerm, activeFacets:config.activeFacets)}"
+				section="{settings.jumpToID}"
+				noCacheHash="1"
+				class="internal"
+			>
+				<f:translate
+					key="LLL:{settings.languageRootPath}locallang-facets.xml:facet.{facetInfo.id}.{facetTerm}"
+					default="{facetTerm}"/>
+				<span class="facetCount">{itemCount}</span>
+			</f:link.action>
+		</li>
+	</f:for>
+</ol>
