@@ -1,0 +1,1 @@
+plugin.tx_find.settings.languageRootPath = EXT:find_slub/Resources/Private/Language/
