@@ -28,10 +28,22 @@
 			<label index="facet.language.ger">Deutsch</label>
 			<label index="facet.language.de">Deutsch</label>
 			<label index="facet.language.English">Englisch</label>
+			<label index="facet.language.eng">Englisch</label>
 			<label index="facet.language.Russian">Russisch</label>
 			<label index="facet.language.French">Französisch</label>
 			<label index="facet.language.Italian">Italienisch</label>
 			<label index="facet.language.Latin">Lateinisch</label>
+			<label index="facet.language.Spanish">Spanisch</label>
+			<label index="facet.language.Polish">Polnisch</label>
+			<label index="facet.language.Czech">Tschechisch</label>
+			<label index="facet.language.Dutch">Holländisch</label>
+			<label index="facet.language.Ancient Greek">Altgriechisch</label>
+			<label index="facet.language.Swedish">Schwedisch</label>
+			<label index="facet.language.Hungarian">Ungarisch</label>
+			<label index="facet.language.Danish">Dänisch</label>
+			<label index="facet.language.Portuguese">Portugiesisch</label>
+			<label index="facet.language.Finnish">Finnisch</label>
+			<label index="facet.language.Slovak">Slowakisch</label>
 
 			<label index="facet.format_de15">Medientyp</label>
 			<label index="facet.format_de15.Book, E-Book">Bücher</label>
