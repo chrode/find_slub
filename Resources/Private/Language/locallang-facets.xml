@@ -25,9 +25,23 @@
 		<languageKey index="de" type="array">
 			<label index="facet.language">Sprache</label>
 			<label index="facet.language.German">Deutsch</label>
+			<label index="facet.language.ger">Deutsch</label>
+			<label index="facet.language.de">Deutsch</label>
+			<label index="facet.language.English">Englisch</label>
+			<label index="facet.language.Russian">Russisch</label>
+			<label index="facet.language.French">Französisch</label>
+			<label index="facet.language.Italian">Italienisch</label>
+			<label index="facet.language.Latin">Lateinisch</label>
 
 			<label index="facet.format_de15">Medientyp</label>
-			<label index="facet.format_de15.Book, E-Book">Buch</label>
+			<label index="facet.format_de15.Book, E-Book">Bücher</label>
+			<label index="facet.format_de15.Article, E-Article">Aufsätze</label>
+			<label index="facet.format_de15.Map">Karten</label>
+			<label index="facet.format_de15.Journal, E-Journal">Zeitschriften</label>
+			<label index="facet.format_de15.Visual Media">Bilder</label>
+			<label index="facet.format_de15.Thesis">Abschlussarbeiten</label>
+			<label index="facet.format_de15.Audio">Tonträger</label>
+			<label index="facet.format_de15.Musical Score">Noten</label>
 
 		</languageKey>
 	</data>
