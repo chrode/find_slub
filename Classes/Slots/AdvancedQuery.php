@@ -69,7 +69,14 @@ class AdvancedQuery {
         $edismax = $query->getEDisMax();
 
         // Needs to be dicussed if activated or not
-        // $edismax->setBoostQuery($boostquery);
+        //$edismax->setBoostQuery($boostquery);
+
+        //$edismax->setBoostFunctions("ord(publishDateSort)^10");
+
+        //$edismax->setBoostQuery('mega_collection:"Qucosa"^10.0');
+
+        //$edismax->setBoostQuery('(mega_collection:"Verbunddaten SWB")^100.0 OR (mega_collection:"SLUB/Deutsche Fotothek")^0.01');
+
 
 
     }

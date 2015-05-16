@@ -4,31 +4,56 @@ plugin.tx_find.view {
     layoutRootPath = EXT:find_slub/Resources/Private/Layouts/
 }
 
+plugin.tx_find.settings.facetDefaults.displayMax = 20
+
 plugin.tx_find.settings.facets {
 
     10 {
         id = format_de15
         field = format_de15
+        query = format_de15:"%s"
     }
 
     20 {
         id = language
-        autocomplete = 1
         field = language
+        query = language:"%s"
     }
 
     30 {
-        id = finc_class_facet
+        id = thema
         field = finc_class_facet
+        query = finc_class_facet:"%s"
     }
+
+    40 {
+        id = author
+        field = author_facet
+        query = author_facet:"%s"
+    }
+
 
     50 {
         id = publishDateSort
         field = publishDateSort
     }
 
+    60 {
+        id =  mega_collection
+        field =  mega_collection
+        query = mega_collection:"%s"
+    }
 
 }
+
+plugin.tx_find.settings.standardFields {
+    author = author
+    author_alternative = author2
+    series = series2
+    imprint = imprint
+}
+
+plugin.tx_find.settings.count = 21
 
 plugin.tx_find.settings.components {
 

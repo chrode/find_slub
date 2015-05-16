@@ -59,35 +59,34 @@ class EnrichSolrResult {
         $document = $assignments['document'];
         /* @var $document Document */
 
-        $fields = $document->getFields();
+        if($document) {
 
-        foreach ($this->settings['enrich']['detail'] as $enrichment) {
+            $fields = $document->getFields();
 
-            $field_data = '';
+            foreach ($this->settings['enrich']['detail'] as $enrichment) {
 
-            $check_fields = is_array($fields[$enrichment['check_field']]) ? $fields[$enrichment['check_field']] : array($fields[$enrichment['check_field']]);
+                $field_data = '';
 
-            foreach($check_fields as $check_field) {
+                $check_fields = is_array($fields[$enrichment['check_field']]) ? $fields[$enrichment['check_field']] : array($fields[$enrichment['check_field']]);
 
-                if (preg_match($enrichment['check_pattern'], $check_field, $matches) === 1) {
+                foreach ($check_fields as $check_field) {
 
-                    $field_data = $matches[1];
+                    if (preg_match($enrichment['check_pattern'], $check_field, $matches) === 1) {
 
+                        $field_data = $matches[1];
+                    }
                 }
 
-            }
+                // TEMP: Get RSN from PPN
+                if (($enrichment['check_field'] === 'rsn') && ($field_data === '')) {
+                    $field_data = $this->getRSNfromPPN($fields);
+                }
 
-            // TEMP: Get RSN from PPN
-            if( ($enrichment['check_field'] === 'rsn') && ($field_data === '') ) {
-                $field_data = $this->getRSNfromPPN($fields);
-            }
+                if (strlen($field_data) > 0) {
 
-
-            if(strlen($field_data) > 0) {
-
-                $enriched = json_decode(file_get_contents(sprintf($enrichment['ws'], $field_data)), true);
-                $assignments['enriched'] = array_merge($assignments['enriched'], $enriched);
-
+                    $enriched = json_decode(file_get_contents(sprintf($enrichment['ws'], $field_data)), true);
+                    $assignments['enriched'] = array_merge($assignments['enriched'], $enriched);
+                }
             }
 
         }

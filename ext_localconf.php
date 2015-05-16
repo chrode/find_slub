@@ -31,3 +31,11 @@ $signalSlotDispatcher->connect(
     FALSE
 );
 
+// Hook into \Subugoe\Find\Controller
+$signalSlotDispatcher->connect(
+    'Subugoe\Find\Controller\SearchController',
+    'detailActionBeforePagingSelect',
+    'Slub\FindSlub\Slots\AdvancedQuery',
+    'build',
+    FALSE
+);
