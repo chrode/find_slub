@@ -85,6 +85,8 @@
 			<label index="show more">mehr zeigen</label>
 			<label index="show less">weniger zeigen</label>
 
+			<label index="copies">Exemplare</label>
+
 			<label index="Show Detail Page">Details</label>
 
 			<label index="Your query could not be executed.">Ihre Abfrage konnte nicht ausgeführt werden.</label>
