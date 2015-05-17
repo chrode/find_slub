@@ -54,7 +54,7 @@ class EnrichSolrResult {
      */
     public function detail(&$assignments) {
 
-        $assignments['enriched'] = array();
+        $assignments['enriched'] = array('fields' => array());
 
         $document = $assignments['document'];
         /* @var $document Document */
@@ -85,7 +85,7 @@ class EnrichSolrResult {
                 if (strlen($field_data) > 0) {
 
                     $enriched = json_decode(file_get_contents(sprintf($enrichment['ws'], $field_data)), true);
-                    $assignments['enriched'] = array_merge($assignments['enriched'], $enriched);
+                    $assignments['enriched']['fields'] = array_merge($assignments['enriched']['fields'], $enriched);
                 }
             }
 
