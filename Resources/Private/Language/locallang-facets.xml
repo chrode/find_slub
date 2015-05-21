@@ -46,7 +46,7 @@
 			<label index="facet.language.Portuguese">Portugiesisch</label>
 			<label index="facet.language.Finnish">Finnisch</label>
 			<label index="facet.language.Slovak">Slowakisch</label>
-			<label index="facet.language.not assigned">Unbekannt</label>
+			<label index="facet.language.not assigned">Nicht definiert</label>
 
 			<label index="facet.format_de15">Medientyp</label>
 			<label index="facet.format_de15.Book, E-Book">Bücher</label>
@@ -54,7 +54,7 @@
 			<label index="facet.format_de15.Map">Karten</label>
 			<label index="facet.format_de15.Journal, E-Journal">Zeitschriften</label>
 			<label index="facet.format_de15.Visual Media">Bilder</label>
-			<label index="facet.format_de15.Thesis">Abschlussarbeiten</label>
+			<label index="facet.format_de15.Thesis">Hochschulschrift</label>
 			<label index="facet.format_de15.Audio">Tonträger</label>
 			<label index="facet.format_de15.Musical Score">Noten</label>
 			<label index="facet.format_de15.Electronic Resource (Remote Access)">Elektronische Resource im Fernzugriff</label>
@@ -63,14 +63,17 @@
 			<label index="facet.format_de15.Image">Bilder</label>
 			<label index="facet.format_de15.Website">Webseite</label>
 			<label index="facet.format_de15.Physical Object">Objekt</label>
-			<label index="facet.format_de15.Manuscript">Handschrift</label>			
+			<label index="facet.format_de15.Manuscript">Handschrift</label>
+			<label index="facet.format_de15.Visual Media">Bildmaterial</label>
+			<label index="facet.format_de15.Kit">Medienkombination</label>			
 
 			<label index="facet.publishDateSort">Erscheinungsjahr</label>
 			<label index="facet.mega_collection">Kollektion</label>
 			<label index="facet.author">Urheber</label>
 			<label index="facet.author.&amp;NA;">Unbekannt</label>
+			<label index="facet.author.&amp;NA;, &amp;NA;">Unbekannt</label>
 			<label index="facet.thema">Fachgebiet</label>
-			<label index="facet.thema.not assigned">Unbekannt</label>
+			<label index="facet.thema.not assigned">Nicht definiert</label>
 		</languageKey>
 	</data>
 </T3locallang>
