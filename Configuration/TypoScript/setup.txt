@@ -108,6 +108,7 @@ plugin.tx_find.settings.components {
         340 = issn
         350 = ismn
         360 = rsn
+        370 = record_id
     }
 
     QueryFields {
@@ -352,6 +353,13 @@ plugin.tx_find.settings.components {
 
         260 {
             field = ismn
+            operators {
+                onephrase = 500
+            }
+        }
+
+        270 {
+            field = record_id
             operators {
                 onephrase = 500
             }
