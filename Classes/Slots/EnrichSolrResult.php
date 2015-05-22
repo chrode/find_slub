@@ -91,6 +91,8 @@ class EnrichSolrResult {
 
         }
 
+        $assignments['show_detaildata'] = $_COOKIE["show_detaildata"];
+
     }
 
     /**
