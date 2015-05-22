@@ -25,6 +25,10 @@
 		</languageKey>
 
 		<languageKey index="de" type="array">
+
+			<label index="facet.access_facet">Zugang</label>
+			<label index="facet.access_facet.Electronic Resources">Online-Ressourcen</label>
+			<label index="facet.access_facet.Local Holdings">Lokale Bestände</label>
 			<label index="facet.language">Sprache</label>
 			<label index="facet.language.German">Deutsch</label>
 			<label index="facet.language.ger">Deutsch</label>

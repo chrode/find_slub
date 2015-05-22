@@ -8,6 +8,12 @@ plugin.tx_find.settings.facetDefaults.displayMax = 20
 
 plugin.tx_find.settings.facets {
 
+    5 {
+        id = access_facet
+        field = access_facet
+        query = access_facet:"%s"
+    }
+
     10 {
         id = format_de15
         field = format_de15
