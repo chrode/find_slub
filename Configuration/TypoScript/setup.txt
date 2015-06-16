@@ -53,9 +53,12 @@ plugin.tx_find.settings.facets {
 }
 
 plugin.tx_find.settings.standardFields {
+    title = title
+    edition = edition
     author = author
     author_alternative = author2
     series = series2
+    series_part = multipart_part
     imprint = imprint
 }
 
@@ -107,6 +110,7 @@ plugin.tx_find.settings.components {
         270 = geographic^300
         280 = genre^300
         290 = rvk_label
+        291 = rvk_facet
         300 = allfields_unstemmed^10
         310 = allfields
         320 = fulltext
@@ -115,6 +119,8 @@ plugin.tx_find.settings.components {
         350 = ismn
         360 = rsn
         370 = record_id
+        380 = barcode
+        390 = signatur
     }
 
     QueryFields {
@@ -371,6 +377,20 @@ plugin.tx_find.settings.components {
             }
         }
 
+        280 {
+            field = barcode
+            operators {
+                onephrase = 500
+            }
+        }
+
+        290 {
+            field = signatur
+            operators {
+                onephrase = 500
+            }
+        }
+
     }
 
 }
@@ -419,4 +439,8 @@ plugin.tx_find.settings {
 
     }
 
+}
+
+plugin.tx_find.settings.modifier {
+    not = NOT %s
 }
