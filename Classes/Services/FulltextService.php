@@ -18,7 +18,7 @@ class FulltextService {
      */
     public function getFulltextLink(Document $document) {
 
-        if($document['access_facet'] == 'Electronic Resources') {
+        if(($document['access_facet'] === 'Electronic Resources') && (strlen($document['url'][0]) > 0)) {
 
             return sprintf(self::RESOLVER_BASE, $document['url'][0]);
 
