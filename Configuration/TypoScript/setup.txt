@@ -4,7 +4,7 @@ plugin.tx_find.view {
     layoutRootPath = EXT:find_slub/Resources/Private/Layouts/
 }
 
-plugin.tx_find.settings.facetDefaults.displayMax = -1
+plugin.tx_find.settings.facetDefaults.displayMax = 100
 
 plugin.tx_find.settings.facets {
 
