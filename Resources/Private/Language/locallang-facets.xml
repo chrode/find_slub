@@ -61,15 +61,16 @@
 			<label index="facet.format_de15.Thesis">Hochschulschrift</label>
 			<label index="facet.format_de15.Audio">Tonträger</label>
 			<label index="facet.format_de15.Musical Score">Noten</label>
-			<label index="facet.format_de15.Electronic Resource (Remote Access)">Elektronische Resource im Fernzugriff</label>
-			<label index="facet.format_de15.Electronic Resource (Data Carrier)">Elektronische Ressource auf Datenträger</label> 
+			<label index="facet.format_de15.Electronic Resource (Remote Access)">Sonstige</label>
+			<label index="facet.format_de15.Electronic Resource (Data Carrier)">Datenträger</label> 
 			<label index="facet.format_de15.Microform">Mikroform</label>
 			<label index="facet.format_de15.Image">Bilder</label>
 			<label index="facet.format_de15.Website">Webseite</label>
 			<label index="facet.format_de15.Physical Object">Objekt</label>
 			<label index="facet.format_de15.Manuscript">Handschrift</label>
 			<label index="facet.format_de15.Visual Media">Bildmaterial</label>
-			<label index="facet.format_de15.Kit">Medienkombination</label>			
+			<label index="facet.format_de15.Kit">Medienkombination</label>
+			<label index="facet.format_de15.Norm">Normen</label>
 
 			<label index="facet.publishDateSort">Erscheinungsjahr</label>
 			<label index="facet.mega_collection">Kollektion</label>
