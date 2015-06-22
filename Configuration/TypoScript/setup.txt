@@ -4,7 +4,7 @@ plugin.tx_find.view {
     layoutRootPath = EXT:find_slub/Resources/Private/Layouts/
 }
 
-plugin.tx_find.settings.facetDefaults.displayMax = 20
+plugin.tx_find.settings.facetDefaults.displayMax = 100
 
 plugin.tx_find.settings.facets {
 
@@ -431,7 +431,7 @@ plugin.tx_find.settings {
 
                 check_field = rsn
                 check_pattern = /^.*DE-14.?(.*?)$/
-                ws = http://primoproxy.slub-dresden.de/cgi-bin/jsonDetails.pl?result.id=libero_mab2%s
+                ws = http://primoproxy.slub-dresden.de/cgi-bin/jsonDetails.pl?result.id=libero_mab2%s&userId=4222726
 
             }
 
