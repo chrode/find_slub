@@ -85,7 +85,10 @@ class EnrichSolrResult {
                 if (strlen($field_data) > 0) {
 
                     $enriched = json_decode(file_get_contents(sprintf($enrichment['ws'], $field_data)), true);
-                    $assignments['enriched']['fields'] = array_merge($assignments['enriched']['fields'], $enriched);
+
+                    if(is_array($enriched) && count($enriched)) {
+                        $assignments['enriched']['fields'] = array_merge($assignments['enriched']['fields'], $enriched);
+                    }
                 }
             }
 
