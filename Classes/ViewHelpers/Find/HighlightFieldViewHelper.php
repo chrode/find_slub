@@ -72,6 +72,7 @@ class HighlightFieldViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\Abstract
 					$fieldContent = $fieldContent[$this->arguments['index']];
 				} else {
 					// TODO: error message
+					$fieldContent = '';
 				}
 			}
 
