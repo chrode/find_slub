@@ -12,42 +12,49 @@ plugin.tx_find.settings.facets {
         id = access_facet
         field = access_facet
         query = access_facet:"%s"
+        excludeOwnFilter = 1
     }
 
     10 {
         id = format_de15
         field = format_de15
         query = format_de15:"%s"
+        excludeOwnFilter = 1
     }
 
     20 {
         id = language
         field = language
         query = language:"%s"
+        excludeOwnFilter = 1
     }
 
     30 {
         id = thema
         field = finc_class_facet
         query = finc_class_facet:"%s"
+        excludeOwnFilter = 1
     }
 
     40 {
         id = author
         field = author_facet
         query = author_facet:"%s"
+        excludeOwnFilter = 1
     }
 
 
     50 {
         id = publishDateSort
         field = publishDateSort
+        excludeOwnFilter = 1
     }
 
     60 {
         id =  mega_collection
         field =  mega_collection
         query = mega_collection:"%s"
+        excludeOwnFilter = 1
     }
 
 }
@@ -431,7 +438,7 @@ plugin.tx_find.settings {
 
                 check_field = rsn
                 check_pattern = /^.*DE-14.?(.*?)$/
-                ws = http://primoproxy.slub-dresden.de/cgi-bin/jsonDetails.pl?result.id=libero_mab2%s
+                ws = http://primoproxy.slub-dresden.de/cgi-bin/jsonDetails.pl?result.id=libero_mab2%s&userId=4222726
 
             }
 
