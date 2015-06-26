@@ -66,6 +66,7 @@ class AdvancedQuery {
 
         $query->setQuery($querystring);
 
+        /** @var \Solarium\QueryType\Select\Query\Component\EdisMax $edismax */
         $edismax = $query->getEDisMax();
 
         // Needs to be dicussed if activated or not
