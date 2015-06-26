@@ -417,8 +417,27 @@ plugin.tx_find.settings.queryFields {
         query = %s
         type = Text
     }
+
+    20 {
+        id = author
+        query = %s
+        type = Text
+    }
+
+    30 {
+        id = rvk_facet
+        query = %s
+        type = Text
+    }
 }
 
+plugin.tx_find.settings.queryFieldForDataField {
+    author = author
+    author2 = author
+    author_corp = author
+    author_corp2 = author
+    rvk_facet = rvk_facet
+}
 
 plugin.tx_find.settings.additionalFilters {
     1 = institution:DE-14
