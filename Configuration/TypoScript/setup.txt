@@ -83,7 +83,12 @@ plugin.tx_find.settings.components {
 
         20 {
             name = bf
-            value = ord(publishDateSort)^10
+            value = recip(rord(publishDateSort),3.16e-11,1,1)^200.0
+        }
+
+        30 {
+            name = bq
+            value = access_facet:"Electronic Resources"^0 OR access_facet:"Local Holdings"^500
         }
     }
 
