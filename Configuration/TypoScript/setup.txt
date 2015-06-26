@@ -438,7 +438,7 @@ plugin.tx_find.settings {
 
                 check_field = rsn
                 check_pattern = /^.*DE-14.?(.*?)$/
-                ws = http://primoproxy.slub-dresden.de/cgi-bin/jsonDetails.pl?result.id=libero_mab2%s&userId=4222726
+                ws = http://primoproxy.slub-dresden.de/cgi-bin/jsonDetails.pl?result.id=libero_mab2%s&userId=%s
 
             }
 

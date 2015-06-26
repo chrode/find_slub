@@ -66,6 +66,7 @@ class EnrichSolrResult {
             foreach ($this->settings['enrich']['detail'] as $enrichment) {
 
                 $field_data = '';
+                $user_data = '' | $GLOBALS['TSFE']->fe_user->user['username'];
 
                 $check_fields = is_array($fields[$enrichment['check_field']]) ? $fields[$enrichment['check_field']] : array($fields[$enrichment['check_field']]);
 
@@ -84,7 +85,7 @@ class EnrichSolrResult {
 
                 if (strlen($field_data) > 0) {
 
-                    $enriched = json_decode(file_get_contents(sprintf($enrichment['ws'], $field_data)), true);
+                    $enriched = json_decode(file_get_contents(sprintf($enrichment['ws'], $field_data, $user_data)), true);
 
                     if(is_array($enriched) && count($enriched)) {
                         $assignments['enriched']['fields'] = array_merge($assignments['enriched']['fields'], $enriched);
