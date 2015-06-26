@@ -453,7 +453,7 @@ plugin.tx_find.settings {
 
                 check_field = fullrecord
                 check_pattern = /^blob:(.*?)$/
-                ws = https://ai.ub.uni-leipzig.de/blob/?%s
+                ws = https://solr.ub.uni-leipzig.de/blob/?%s
 
             }
 
