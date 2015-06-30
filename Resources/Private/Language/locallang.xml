@@ -87,6 +87,7 @@
 
 			<label index="copies">Exemplare</label>
 			<label index="multipart">Mehrbändiges Werk</label>
+			<label index="multipart.link">Zeige Bände</label>
 			<label index="links">Links</label>
 			<label index="references">Verweise</label>
 
