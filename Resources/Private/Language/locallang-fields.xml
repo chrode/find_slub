@@ -36,6 +36,7 @@
 			<label index="field.topic">Schlagwörter</label>
 			<label index="field.format_de15">Medientyp</label>
 			<label index="field.source">Quelle</label>
+			<label index="field.genre">Genre</label>
 			<label index="field.performer">Interpreten</label>
 			<label index="field.cast">Besetzung/Gattung</label>
 			<label index="field.contains">Enthält</label>
