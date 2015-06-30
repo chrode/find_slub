@@ -32,9 +32,16 @@
 			<label index="field.rvk">RVK-Notation</label>
 			<label index="field.doi">DOI</label>
 			<label index="field.issn">ISSN</label>
+			<label index="field.ismn">ISMN</label>
 			<label index="field.topic">Schlagwörter</label>
 			<label index="field.format_de15">Medientyp</label>
 			<label index="field.source">Quelle</label>
+			<label index="field.performer">Interpreten</label>
+			<label index="field.cast">Besetzung/Gattung</label>
+			<label index="field.contains">Enthält</label>
+			<label index="field.date">Datierung</label>
+			<label index="field.published">Erschienen</label>
+			<label index="field.publishHistory">Erscheinungsverlauf</label>
 			<label index="field.description">Beschreibung</label>
 			<label index="field.publisher">Verlag</label>
 			<label index="field.publisher.plural">Verlage</label>
