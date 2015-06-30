@@ -420,13 +420,25 @@ plugin.tx_find.settings.queryFields {
 
     20 {
         id = author
-        query = %s
+        hidden = 1
+        query = (_query_:"{!edismax qf=\"author^300 author_id^100 author_corp^300 author2^300 author_corp2^100 author_fuller^150 author_ref^500 author_corp_ref^500 author_orig^300 author2_orig^300 author_corp_orig^300 author_corp2_orig^100\"}%s")
+        phrase = 0
         type = Text
     }
 
     30 {
         id = rvk_facet
-        query = %s
+        hidden = 1
+        query = rvk_facet:%s
+        phrase = 1
+        type = Text
+    }
+
+    40 {
+        id = publisher
+        hidden = 1
+        query = publisher:%s
+        phrase = 1
         type = Text
     }
 }
@@ -437,6 +449,7 @@ plugin.tx_find.settings.queryFieldForDataField {
     author_corp = author
     author_corp2 = author
     rvk_facet = rvk_facet
+    publisher = publisher
 }
 
 plugin.tx_find.settings.additionalFilters {

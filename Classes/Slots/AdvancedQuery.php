@@ -56,18 +56,22 @@ class AdvancedQuery {
      */
     public function build(&$query, $arguments) {
 
-        $settings = $this->settings['components'];
+        if(strlen($arguments['q']['default']) > 0) {
 
-        $searchHandler = new SearchHandler($settings);
+            $settings = $this->settings['components'];
 
-        $boostquery = $searchHandler->createBoostQueryString($arguments['q']['default']);
+            $searchHandler = new SearchHandler($settings);
 
-        $querystring = $searchHandler->createAdvancedQueryString($arguments['q']['default']);
+            $boostquery = $searchHandler->createBoostQueryString($arguments['q']['default']);
 
-        $query->setQuery($querystring);
+            $querystring = $searchHandler->createAdvancedQueryString($arguments['q']['default']);
 
-        /** @var \Solarium\QueryType\Select\Query\Component\EdisMax $edismax */
-        $edismax = $query->getEDisMax();
+            $query->setQuery($querystring);
+
+            /** @var \Solarium\QueryType\Select\Query\Component\EdisMax $edismax */
+            $edismax = $query->getEDisMax();
+
+        }
 
         // Needs to be dicussed if activated or not
         //$edismax->setBoostQuery($boostquery);
