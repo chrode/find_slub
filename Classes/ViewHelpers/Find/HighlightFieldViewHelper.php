@@ -57,6 +57,7 @@ class HighlightFieldViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\Abstract
 		$this->registerArgument('highlightTagOpen', 'string', 'opening tag to insert to begin highlighting', FALSE, '<em class="highlight">');
 		$this->registerArgument('highlightTagClose', 'string', 'closing tag to insert to end highlighting', FALSE, '</em>');
 		$this->registerArgument('raw', 'boolean', 'whether to not HTML escape the output', FALSE, FALSE);
+		$this->registerArgument('translate', 'array', 'translate path and extension', FALSE, FALSE);
 	}
 
 
@@ -94,9 +95,19 @@ class HighlightFieldViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\Abstract
 		if (is_array($fieldContent)) {
 			$result = array();
 			foreach ($fieldContent as $singleField) {
+
+				if($this->arguments['translate']) {
+					$singleField = \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate($this->arguments['translate']['path'].'.'.$singleField, $this->arguments['translate']['extension']);
+				}
+
 				$result[] = $this->highlightSingleField($singleField, $highlightInfo);
 			}
 		} else {
+
+			if($this->arguments['translate']) {
+				$fieldContent = \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate($this->arguments['translate']['path'].'.'.$fieldContent, $this->arguments['translate']['extension']);
+			}
+
 			$result = $this->highlightSingleField($fieldContent, $highlightInfo);
 		}
 
