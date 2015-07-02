@@ -86,6 +86,7 @@
 			<label index="show less">weniger zeigen</label>
 
 			<label index="copies">Exemplare</label>
+			<label index="noTitle">Kein Titel verfügbar</label>
 			<label index="multipart">Mehrbändiges Werk</label>
 			<label index="multipart.link">Zeige Bände</label>
 			<label index="links">Links</label>
