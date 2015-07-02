@@ -133,6 +133,7 @@ plugin.tx_find.settings.components {
         370 = record_id
         380 = barcode
         390 = signatur
+        400 = hierarchy_top_id
     }
 
     QueryFields {
