@@ -416,8 +416,6 @@ class SearchHandler
 
             $field = $clausearray['field'];
 
-            print_r($field);
-
             if (is_numeric($field)) {
                 // shift off the join string and weight
 
