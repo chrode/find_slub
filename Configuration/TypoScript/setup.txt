@@ -73,7 +73,7 @@ plugin.tx_find.settings.count = 21
 
 plugin.tx_find.settings.components {
 
-    DismaxHandler = edismax
+    DismaxHandler = dismax
 
     DismaxParams {
         10 {
@@ -365,44 +365,59 @@ plugin.tx_find.settings.components {
         240 {
             field = isbn
             operators {
-                onephrase = 500
+                onephrase = 50000
             }
         }
 
         250 {
             field = issn
             operators {
-                onephrase = 500
+                onephrase = 50000
             }
         }
 
         260 {
             field = ismn
             operators {
-                onephrase = 500
+                onephrase = 50000
             }
         }
 
         270 {
-            field = record_id
+            field = rsn
             operators {
-                onephrase = 500
+                onephrase = 50000
             }
         }
 
         280 {
+            field = record_id
+            operators {
+                onephrase = 50000
+            }
+        }
+
+        290 {
             field = barcode
+            operators {
+                onephrase = 50000
+            }
+        }
+
+        300 {
+            field = signatur
+            operators {
+                onephrase = 50000
+            }
+        }
+
+        310 {
+            field = hierarchy_top_id
             operators {
                 onephrase = 500
             }
         }
 
-        290 {
-            field = signatur
-            operators {
-                onephrase = 500
-            }
-        }
 
     }
 
