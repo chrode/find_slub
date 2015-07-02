@@ -374,7 +374,7 @@ class SearchHandler
 
             // Do not munge w/o rules
             if ($mungeRules) {
-                $mungeValues = $this->mungeValues($search, !$advanced);
+                $mungeValues = $this->mungeValues($search, $advanced);
                 $query       = $this->munge($mungeRules, $mungeValues);
             } else {
                 $query = $search;
