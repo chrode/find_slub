@@ -457,6 +457,22 @@ plugin.tx_find.settings.queryFields {
         phrase = 1
         type = Text
     }
+
+    50 {
+        id = topic
+        hidden = 1
+        query = topic:%s
+        phrase = 1
+        type = Text
+    }
+
+    60 {
+        id = hierarchy_parent_title
+        hidden = 1
+        query = hierarchy_parent_title:%s
+        phrase = 1
+        type = Text
+    }
 }
 
 plugin.tx_find.settings.queryFieldForDataField {
@@ -466,6 +482,8 @@ plugin.tx_find.settings.queryFieldForDataField {
     author_corp2 = author
     rvk_facet = rvk_facet
     publisher = publisher
+    topic = topic
+    hierarchy_parent_title = hierarchy_parent_title
 }
 
 plugin.tx_find.settings.additionalFilters {
