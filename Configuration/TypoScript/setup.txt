@@ -73,7 +73,7 @@ plugin.tx_find.settings.count = 21
 
 plugin.tx_find.settings.components {
 
-    DismaxHandler = dismax
+    DismaxHandler = edismax
 
     DismaxParams {
         10 {
