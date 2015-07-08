@@ -7,7 +7,7 @@
 	</meta>
 
 	<data type="array">
-		
+
 		<languageKey index="default" type="array">
 			<label index="Missing type in configuration for queryField %s.">Error: Missing type in configuration for queryField »%s«.</label>
 
@@ -51,7 +51,7 @@
 
 		<languageKey index="de" type="array">
 			<label index="Missing type in configuration for queryField %s.">Fehler: Fehlender type in der Konfiguration für queryField »%s«.</label>
-			
+
 			<label index="extended Search">erweiterte Suche</label>
 			<label index="basic Search">einfache Suche</label>
 			<label index="Search">Suchen</label>
@@ -88,6 +88,7 @@
 			<label index="copies">Exemplare</label>
 			<label index="noTitle">Kein Titel verfügbar</label>
 			<label index="multipart">Mehrbändiges Werk</label>
+			<label index="series">Verlagsreihe</label>
 			<label index="multipart.link">Zeige Bände</label>
 			<label index="links">Links</label>
 			<label index="references">Verweise</label>
