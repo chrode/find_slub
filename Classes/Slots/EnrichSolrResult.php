@@ -78,11 +78,6 @@ class EnrichSolrResult {
                     }
                 }
 
-                // TEMP: Get RSN from PPN
-                if (($enrichment['check_field'] === 'rsn') && ($field_data === '')) {
-                    $field_data = $this->getRSNfromPPN($fields);
-                }
-
                 if (strlen($field_data) > 0) {
 
                     // HTTP errors won't throw an exception
@@ -98,44 +93,6 @@ class EnrichSolrResult {
         }
 
         $assignments['show_detaildata'] = $_COOKIE["show_detaildata"];
-
-    }
-
-    /**
-     * Resolves PPNs from Solr to PSN
-     *
-     * @param array $fields Fields returned from Solr
-     * @return string
-     */
-    private function getRSNfromPPN($fields) {
-
-        $rsn = '';
-
-        if(strlen($fields['record_id']) > 0) {
-
-            $opts = array('http' =>
-                array(
-                    'method'  => 'POST',
-                    'header'  => 'Content-type: application/json',
-                    'content' => json_encode(
-                        array(
-                            'getRSNfromPPN' => array(
-                                'PPN' => $fields['record_id']
-                            )
-                        )
-                    )
-                )
-            );
-
-            $context  = stream_context_create($opts);
-
-            $result = json_decode(file_get_contents('http://primoproxy.slub-dresden.de/cgi-bin/LiberoProxy.pl', false, $context), true);
-
-            $rsn = $result['answer']['RSN'];
-
-        }
-
-        return $rsn;
 
     }
 
